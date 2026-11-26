@@ -1,0 +1,14 @@
+# Tout ce qui ne doit JAMAIS entrer dans l'image (partie 4 : images Docker et confidentialité)
+.env
+.env.*
+secrets/
+.git/
+.github/
+.claude/
+ateliers/
+docs/
+prompts/
+tests/
+*.db
+__pycache__/
+.venv/

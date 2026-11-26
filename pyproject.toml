@@ -1,0 +1,25 @@
+[project]
+name = "meetroom"
+version = "1.0.0"
+description = "API de réservation de salles — application fil rouge de la formation « Développeurs : boostez vos performances grâce à l'IA »"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+extend-exclude = ["ateliers"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+ignore = ["S101"]  # assert autorisé dans les tests
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S"]
+"app/routers/*" = ["B008"]
+
+[tool.bandit]
+exclude_dirs = ["tests", "ateliers"]

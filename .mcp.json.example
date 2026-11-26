@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "docs-internes": {
+      "command": "python",
+      "args": ["tools/mcp_docs.py", "--read-only"],
+      "env": { "DOCS_TOKEN": "${DOCS_TOKEN}" }
+    }
+  }
+}

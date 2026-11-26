@@ -1,0 +1,34 @@
+# Les engagements de docs/CHARTE-IA.md, traduits en contrôles automatiques.
+# À associer à une protection de branche : pipeline obligatoire + une approbation humaine.
+name: garde-fous
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  controles:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      # Charte « Secrets » : aucun secret dans le code
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: pip install -r requirements-dev.txt
+
+      # Charte « Sécurité » : analyse statique et dépendances
+      - run: ruff check .
+      - run: bandit -r app -ll
+      - run: pip-audit -r requirements.txt
+
+      # Charte « Relecture » : le code est testé (l'approbation humaine vient de la protection de branche)
+      - run: pytest

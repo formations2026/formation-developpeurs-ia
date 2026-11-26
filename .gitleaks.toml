@@ -1,0 +1,8 @@
+# Les supports d'atelier contiennent des identifiants FICTIFS, volontairement visibles,
+# qui servent d'exemples de fuite à repérer. Ils sont exclus du scan.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Supports pédagogiques : faux secrets à repérer"
+paths = ['''ateliers/''']
