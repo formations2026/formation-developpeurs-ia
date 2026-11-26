@@ -50,8 +50,19 @@ def test_creation_dates_inversees_422(client, tomorrow):
 def test_salles_libres(client, tomorrow):
     client.post("/bookings", json=_payload(tomorrow), headers=ALICE)
     params = {"start": tomorrow.isoformat(), "end": (tomorrow + timedelta(hours=1)).isoformat()}
-    names = [r["name"] for r in client.get("/rooms/available", params=params).json()]
-    assert names == ["Boréal", "Cassiopée"]
+    body = client.get("/rooms/available", params=params).json()
+    assert [r["name"] for r in body["items"]] == ["Boréal", "Cassiopée"] and body["total"] == 2
+
+
+def test_salles_libres_paginees(client, tomorrow):
+    params = {"start": tomorrow.isoformat(), "end": (tomorrow + timedelta(hours=1)).isoformat()}
+    body = client.get("/rooms/available", params={**params, "page": 2, "size": 2}).json()
+    assert [r["name"] for r in body["items"]] == ["Cassiopée"] and body["total"] == 3
+
+
+def test_salles_libres_pagination_invalide_422(client, tomorrow):
+    params = {"start": tomorrow.isoformat(), "end": (tomorrow + timedelta(hours=1)).isoformat()}
+    assert client.get("/rooms/available", params={**params, "size": 0}).status_code == 422
 
 
 def test_salles_libres_date_invalide_422(client):
