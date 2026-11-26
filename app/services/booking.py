@@ -7,7 +7,7 @@ import sqlite3
 from datetime import UTC, datetime, timedelta
 
 from app import repository
-from app.schemas import Booking, BookingIn
+from app.schemas import Booking, BookingIn, SlotIn, WaitlistEntry
 
 logger = logging.getLogger("meetroom.booking")
 
@@ -37,6 +37,14 @@ class AlreadyStarted(BookingError):
 
 
 class TooLong(BookingError):
+    pass
+
+
+class RoomIsFree(BookingError):
+    """La salle est libre : il suffit de la réserver."""
+
+
+class AlreadyWaiting(BookingError):
     pass
 
 
@@ -93,3 +101,24 @@ def cancel_booking(
         raise AlreadyStarted(ref)
     repository.delete_booking(db, ref)
     logger.info("réservation annulée", extra={"booking_ref": ref, "owner_id": user_id})
+
+
+def join_waitlist(db: sqlite3.Connection, room_id: int, user_id: int, slot: SlotIn) -> None:
+    """Inscrit l'utilisateur en liste d'attente d'une salle occupée sur le créneau.
+
+    Le piège de la user story : si la salle est libre, l'inscription n'a pas de sens.
+    """
+    if repository.get_room(db, room_id) is None:
+        raise RoomNotFound(room_id)
+    if is_room_free(db, room_id, slot.start_at, slot.end_at):
+        raise RoomIsFree(room_id)
+    if not repository.add_waitlist(db, room_id, user_id, slot.start_at, slot.end_at):
+        raise AlreadyWaiting(room_id)
+    logger.info("inscription en liste d'attente", extra={"room_id": room_id, "user_id": user_id})
+
+
+def waitlist_of(db: sqlite3.Connection, room_id: int) -> list[WaitlistEntry]:
+    """Liste d'attente d'une salle, dans l'ordre d'arrivée."""
+    if repository.get_room(db, room_id) is None:
+        raise RoomNotFound(room_id)
+    return repository.list_waitlist(db, room_id)
