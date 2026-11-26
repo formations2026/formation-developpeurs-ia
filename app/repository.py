@@ -4,7 +4,7 @@ from __future__ import annotations
 import sqlite3
 from datetime import datetime
 
-from app.schemas import Booking, BookingIn, Room
+from app.schemas import Booking, BookingIn, Room, WaitlistEntry
 
 
 def _iso(value: datetime) -> str:
@@ -103,3 +103,35 @@ def get_booking(db: sqlite3.Connection, ref: str) -> Booking | None:
 def delete_booking(db: sqlite3.Connection, ref: str) -> None:
     db.execute("DELETE FROM bookings WHERE ref = :ref", {"ref": ref})
     db.commit()
+
+
+def add_waitlist(
+    db: sqlite3.Connection, room_id: int, user_id: int, start: datetime, end: datetime
+) -> bool:
+    """Inscrit l'utilisateur. Renvoie False s'il est déjà inscrit pour ce créneau."""
+    try:
+        db.execute(
+            "INSERT INTO waitlist (room_id, user_id, start_at, end_at) "
+            "VALUES (:room_id, :user_id, :start_at, :end_at)",
+            {"room_id": room_id, "user_id": user_id, "start_at": _iso(start), "end_at": _iso(end)},
+        )
+    except sqlite3.IntegrityError:
+        return False
+    db.commit()
+    return True
+
+
+def list_waitlist(db: sqlite3.Connection, room_id: int) -> list[WaitlistEntry]:
+    """Inscrits d'une salle dans l'ordre d'arrivée. Aucun identifiant de personne n'est renvoyé."""
+    rows = db.execute(
+        "SELECT start_at, end_at FROM waitlist WHERE room_id = :room_id ORDER BY id",
+        {"room_id": room_id},
+    ).fetchall()
+    return [
+        WaitlistEntry(
+            position=i,
+            start_at=datetime.fromisoformat(r["start_at"]),
+            end_at=datetime.fromisoformat(r["end_at"]),
+        )
+        for i, r in enumerate(rows, start=1)
+    ]

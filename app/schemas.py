@@ -51,3 +51,29 @@ class Booking(BaseModel):
     title: str
     start_at: datetime
     end_at: datetime
+
+
+class SlotIn(BaseModel):
+    """Un créneau demandé (liste d'attente)."""
+
+    start_at: datetime
+    end_at: datetime
+
+    @field_validator("start_at", "end_at")
+    @classmethod
+    def _normalise(cls, value: datetime) -> datetime:
+        return to_utc(value)
+
+    @model_validator(mode="after")
+    def _check_order(self) -> SlotIn:
+        if self.end_at <= self.start_at:
+            raise ValueError("end_at doit être postérieur à start_at")
+        return self
+
+
+class WaitlistEntry(BaseModel):
+    """Une inscription, sans aucune donnée sur la personne inscrite."""
+
+    position: int
+    start_at: datetime
+    end_at: datetime

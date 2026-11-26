@@ -21,6 +21,14 @@ CREATE TABLE IF NOT EXISTS bookings (
     end_at   TEXT    NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_bookings_room_start ON bookings(room_id, start_at);
+CREATE TABLE IF NOT EXISTS waitlist (
+    id       INTEGER PRIMARY KEY AUTOINCREMENT,
+    room_id  INTEGER NOT NULL REFERENCES rooms(id),
+    user_id  INTEGER NOT NULL,
+    start_at TEXT    NOT NULL,
+    end_at   TEXT    NOT NULL,
+    UNIQUE (room_id, user_id, start_at, end_at)
+);
 """
 
 
