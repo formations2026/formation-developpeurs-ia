@@ -19,6 +19,9 @@
 | Propose un test ? | | |
 | Ce pour quoi je l'utiliserai | | |
 
+## Si vous ne codez pas
+Mettez-vous en binôme avec un développeur. Votre mission : lire `AGENTS.md` et `.claude/settings.json`, puis répondre par écrit à deux questions — **que peut lire l'outil ?** et **que peut-il exécuter sans demander ?** Vous présentez la réponse au débrief.
+
 ## Critères de réussite
 - [ ] Deux assistants répondent sur le projet
 - [ ] Le test des règles est passé pour au moins un des deux

@@ -22,6 +22,9 @@
 4. **Exercice de code (biais).** Ouvrez [`validation_noms.py`](validation_noms.py) : la validation refuse de vrais noms.
    Écrivez les tests qui le montrent, puis corrigez… ou supprimez la règle.
 
+## Si vous ne codez pas
+Cet atelier ne demande pas de coder : vous menez l'analyse des risques et la réécriture de la user story. L'exercice de code (étape 4) est facultatif pour vous.
+
 ## Critères de réussite
 - [ ] Au moins six risques, dont un de chaque catégorie
 - [ ] La version remédiée reste utile à l'utilisateur

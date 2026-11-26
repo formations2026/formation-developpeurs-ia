@@ -29,6 +29,9 @@ Vérifiable ? Précis (qui, quand) ? Tenable ? Utile contre un vrai risque ?
 |---|---|
 | « Nous utilisons l'IA de manière responsable. » | « Toute pull request contenant du code généré est relue et approuvée par un humain avant fusion. » |
 
+## Si vous ne codez pas
+Cet atelier ne demande pas de coder : vous rédigez les engagements et animez la restitution. Laissez les développeurs traduire trois engagements en contrôles automatiques.
+
 ## Critères de réussite
 - [ ] Six engagements au moins, tous vérifiables
 - [ ] Trois sont contrôlés automatiquement

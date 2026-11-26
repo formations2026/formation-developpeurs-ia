@@ -13,7 +13,7 @@ check:     ## Qualité et sécurité, comme la CI
 	ruff check . && bandit -q -r app -ll && pytest
 
 seed:      ## Remplir la base locale avec des données synthétiques
-	PYTHONPATH=. python scripts/fake_data.py
+	python -m scripts.fake_data
 
 sandbox:   ## Lancer les tests dans un conteneur sans réseau (bac à sable)
 	docker run --rm --network none --user 1000:1000 -v "$$PWD":/app -w /app python:3.12-slim sh -c "echo 'Bac à sable : pas de réseau, dossier du projet uniquement' && ls"

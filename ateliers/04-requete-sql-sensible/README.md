@@ -10,7 +10,8 @@ Un développeur pressé s'apprête à coller ceci dans un chat public (tout est 
 > Voici quelques lignes pour que tu comprennes : Claire Morel, claire.morel@novaline.fr, RH, 14 réservations ;
 > Karim Benali, k.benali@novaline.fr, DSI, 11 réservations… »
 
-La requête est dans [`requete_a_securiser.py`](requete_a_securiser.py).
+La requête est dans [`requete_a_securiser.py`](requete_a_securiser.py). Elle interroge une **autre base** (fictive) de Novaline,
+qui contient une table `employees` : ce n'est pas le schéma de MeetRoom, et c'est voulu — MeetRoom ne stocke aucune identité.
 
 ## Étapes
 1. Listez **au moins cinq risques** dans la demande et dans le code.
@@ -27,6 +28,9 @@ La requête est dans [`requete_a_securiser.py`](requete_a_securiser.py).
 
 3. Obtenez la requête finale avec l'outil choisi, en n'envoyant que **le schéma et des données synthétiques**.
 4. Écrivez le test qui prouve que la requête résiste à une injection.
+
+## Si vous ne codez pas
+Cet atelier est fait pour vous : tenez le rôle **RSSI** ou **DPO**. Vous validez votre ligne du workflow et vous refusez tant que la réponse n'est pas précise.
 
 ## Critères de réussite
 - [ ] Aucune donnée réelle ni secret n'a été envoyé

@@ -1,4 +1,4 @@
-# Atelier 2 — Le MVP de MeetRoom en vibe coding (60 min)
+# Atelier 2 — La liste d'attente, en vibe coding encadré (60 min)
 
 **Objectif :** livrer une fonctionnalité complète avec un assistant, en gardant le contrôle : plan, petites étapes, relecture, commits.
 
@@ -11,12 +11,15 @@ avec la checklist de relecture, d'abord seul, puis en demandant à l'assistant :
 > **En tant que** salarié, **je veux** m'inscrire sur la liste d'attente d'une salle pour un créneau occupé,
 > **afin d'**être prévenu si elle se libère.
 
-Critères d'acceptation :
-- `POST /rooms/{id}/waitlist` avec `start_at` et `end_at` → 201
-- 404 si la salle n'existe pas ; 409 si la salle est **libre** sur le créneau (il suffit de réserver)
-- 409 si l'utilisateur est déjà inscrit pour ce créneau
-- `GET /rooms/{id}/waitlist` renvoie les inscrits dans l'ordre d'arrivée, sans donnée personnelle
-- un test par critère
+Trois user stories, de difficulté croissante (les mêmes que sur la diapositive) :
+
+| | User story | Critères d'acceptation |
+|---|---|---|
+| US1 | S'inscrire en liste d'attente | `POST /rooms/{id}/waitlist` avec `start_at` et `end_at` → 201 ; salle inconnue → 404 |
+| US2 | Refuser les inscriptions inutiles | 409 si la salle est **libre** sur le créneau (il suffit de réserver) ; 409 si déjà inscrit |
+| US3 | Consulter la liste | `GET /rooms/{id}/waitlist` : inscrits dans l'ordre d'arrivée, **sans donnée personnelle** |
+
+Un test par critère.
 
 Définition de « terminé » : `make check` vert · aucun test existant modifié · aucune nouvelle dépendance · diff relu ligne à ligne.
 
@@ -35,10 +38,17 @@ Définition de « terminé » : `make check` vert · aucun test existant modifi�
 | Route | | | |
 | Tests | | | |
 
+## Si vous ne codez pas
+Vous êtes **copilote**. Vous ne tapez pas de code : vous tenez le journal de bord, vous vérifiez chaque critère d'acceptation dans `/docs` (l'interface de test de l'API), et vous faites l'échauffement en langage courant : « qu'est-ce qui vous inquiéterait dans ce fichier ? ». Les défauts 2, 5 et 7 se trouvent sans savoir programmer.
+
 ## Critères de réussite
 - [ ] Les critères d'acceptation ont chacun leur test
 - [ ] Au moins trois commits, messages lisibles
 - [ ] Vous pouvez expliquer chaque ligne du diff
+
+## Bloqué ?
+Le corrigé complet est sur la branche `solution/atelier-2`, en trois commits (données, règles, routes) :
+`git log --oneline main..solution/atelier-2` puis `git show <commit>`. Regardez un commit à la fois, pas tout le diff.
 
 <details><summary>Corrigé indicatif de l'échauffement</summary>
 

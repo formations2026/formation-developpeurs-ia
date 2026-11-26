@@ -4,7 +4,7 @@ Pourquoi : on n'envoie jamais de données réelles à un outil d'IA, et on ne te
 avec une copie de la production. Plusieurs langues sont utilisées exprès : des données de
 test uniformes cachent les biais (noms accentués, composés, alphabets non latins).
 
-Usage : PYTHONPATH=. python scripts/fake_data.py [chemin_de_la_base]
+Usage : python -m scripts.fake_data [chemin_de_la_base]
 """
 from __future__ import annotations
 
