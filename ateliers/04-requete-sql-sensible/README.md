@@ -38,19 +38,5 @@ Cet atelier est fait pour vous : tenez le rôle **RSSI** ou **DPO**. Vous valide
 - [ ] Un test d'attaque existe
 - [ ] Chaque rôle a validé sa ligne
 
-<details><summary>Corrigé indicatif</summary>
-
-**Risques :** mot de passe de production dans le prompt (à révoquer) · données personnelles nominatives ·
-chat public sans contrat · injection SQL par concaténation · exécution directe en production sans test ·
-classement nominatif des salariés (finalité à justifier : un agrégat par service suffit sans doute).
-
-**Requête :**
-```sql
-SELECT e.dept, COUNT(*) AS nb
-FROM bookings b JOIN employees e ON e.id = b.employee_id
-WHERE b.start_at >= :debut AND e.dept = :service
-GROUP BY e.dept ORDER BY nb DESC;
-```
-Index utile : `bookings(start_at)` et `bookings(employee_id)`. Exécution : d'abord sur une copie anonymisée,
-avec un compte en lecture seule.
-</details>
+## Le corrigé
+Il est présenté par le formateur au débrief, après l'atelier. Comparer **votre** travail au corrigé est l'exercice le plus formateur : essayez d'abord.

@@ -1,7 +1,7 @@
 # Les ateliers
 
 Chaque atelier a la même structure : **objectif**, **étapes**, **critères de réussite**, **pour aller plus loin**,
-et un **corrigé indicatif** replié en bas de page (à n'ouvrir qu'après avoir essayé).
+et le corrigé est présenté par le formateur au débrief.
 
 Règles communes :
 - une branche par atelier : `git switch -c atelier-N-prenom` ;

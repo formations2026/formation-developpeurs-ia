@@ -30,9 +30,5 @@ Mettez-vous en binôme avec un développeur. Votre mission : lire `AGENTS.md` et
 ## Pour aller plus loin
 Faites tourner un modèle local (Ollama + une extension d'IDE) et refaites l'étape 5. Que perdez-vous, que gagnez-vous ?
 
-<details><summary>Corrigé indicatif</summary>
-
-Un assistant qui lit `AGENTS.md` écrit la requête dans `app/repository.py`, avec un paramètre nommé (`:owner_id`),
-et propose un test. Un chat web sans accès au projet invente souvent un ORM ou une table qui n'existent pas :
-ce n'est pas un défaut du modèle, c'est une absence de contexte.
-</details>
+## Le corrigé
+Il est présenté par le formateur au débrief, après l'atelier. Comparer **votre** travail au corrigé est l'exercice le plus formateur : essayez d'abord.

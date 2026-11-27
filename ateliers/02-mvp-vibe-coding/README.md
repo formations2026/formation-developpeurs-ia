@@ -46,13 +46,5 @@ Vous êtes **copilote**. Vous ne tapez pas de code : vous tenez le journal de bo
 - [ ] Au moins trois commits, messages lisibles
 - [ ] Vous pouvez expliquer chaque ligne du diff
 
-## Bloqué ?
-Le corrigé complet est sur la branche `solution/atelier-2`, en trois commits (données, règles, routes) :
-`git log --oneline main..solution/atelier-2` puis `git show <commit>`. Regardez un commit à la fois, pas tout le diff.
-
-<details><summary>Corrigé indicatif de l'échauffement</summary>
-
-1. Injection SQL (f-string) · 2. mot de passe en dur · 3. `verify=False` (TLS désactivé) · 4. `except: pass` qui avale les erreurs ·
-5. e-mail et titre écrits dans le journal · 6. `eval` sur une entrée utilisateur · 7. paquet `fastapi-booking-utils` qui n'existe pas ·
-8. aucun typage, aucun test, comparaison de dates sous forme de chaînes locales.
-</details>
+## Le corrigé
+Il est présenté par le formateur au débrief, après l'atelier. Comparer **votre** travail au corrigé est l'exercice le plus formateur : essayez d'abord.

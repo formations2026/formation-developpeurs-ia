@@ -30,16 +30,5 @@ Cet atelier ne demande pas de coder : vous menez l'analyse des risques et la ré
 - [ ] La version remédiée reste utile à l'utilisateur
 - [ ] La note de décision dit quelles données partent, et lesquelles ne partent jamais
 
-<details><summary>Corrigé indicatif</summary>
-
-**Risques :** titres de réunion et participants envoyés à un tiers (données personnelles, parfois très sensibles) ·
-priorité hiérarchique (discrimination indirecte) · annulation automatique sans recours (décision automatisée) ·
-détection par badge (surveillance des salariés) · conservation deux ans pour une autre finalité ·
-injection de prompt par les titres de réunion · coût non borné.
-
-**Remédiations :** n'envoyer que créneau, effectif, équipements · priorité selon le besoin, pas le grade ·
-notification et confirmation avant toute annulation · pas de badge · conservation courte ·
-information des salariés, avis du DPO. Voir `docs/adr/012-suggestion-salle.md`.
-
-**Code :** souvent, « non vide et de longueur raisonnable » suffit ; le biais vient d'une règle inutile.
-</details>
+## Le corrigé
+Il est présenté par le formateur au débrief, après l'atelier. Comparer **votre** travail au corrigé est l'exercice le plus formateur : essayez d'abord.

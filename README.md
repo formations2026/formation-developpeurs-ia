@@ -64,7 +64,6 @@ curl -X POST http://127.0.0.1:8000/bookings -H "X-User-Id: 1" -H "Content-Type: 
 | `ateliers/` | Les six ateliers : consignes, supports, critères de réussite | Jours 1 et 2 |
 | `docs/INSTALLATION.md` | Installation pas à pas et pannes fréquentes | Avant le jour 1 |
 | `docs/AUTRES-LANGAGES.md` | Équivalents Java, JavaScript, C# | Tout au long |
-| `docs/DEROULE.md`, `docs/DEMOS.md` | Pour le formateur : déroulé minuté et scénarios des démonstrations | — |
 
 ## Les six ateliers
 
@@ -79,17 +78,8 @@ curl -X POST http://127.0.0.1:8000/bookings -H "X-User-Id: 1" -H "Content-Type: 
 
 Travaillez sur une branche par atelier : `git switch -c atelier-2-prenom`.
 
-### Bloqué ? Les corrigés
-Deux branches contiennent un corrigé complet, commit par commit :
-
-```bash
-git log --oneline main..solution/atelier-2     # les étapes, une par commit
-git diff main solution/atelier-2               # tout le corrigé de la liste d'attente
-git diff main solution/atelier-3               # une tâche déléguée à un agent : la pagination
-```
-
-Les ateliers 1, 4, 5 et 6 ont leur corrigé indicatif replié en bas de leur page.
-N'ouvrez un corrigé qu'après avoir essayé : comparer **votre** diff au corrigé est l'exercice le plus formateur.
+### Les corrigés
+Ils sont présentés par le formateur au débrief de chaque atelier. Essayez d'abord : comparer **votre** travail au corrigé est l'exercice le plus formateur.
 
 ### Vous ne codez pas, ou pas en Python ?
 - Chaque atelier a une section « Si vous ne codez pas » : relire, juger, décider sont les compétences visées.
@@ -115,12 +105,3 @@ l'application lisible en formation : en production, l'identité vient d'un jeton
 
 Elles sont dans [`docs/CHARTE-IA.md`](docs/CHARTE-IA.md). En trois lignes :
 on utilise des outils autorisés, on n'envoie ni secret ni donnée réelle, et un humain relit et signe chaque ligne.
-
-## Publier ce dépôt (formateur)
-
-```bash
-git remote add origin https://github.com/formations2026/formation-developpeurs-ia.git
-git push -u origin --all        # main et les deux branches de corrigé
-```
-
-Activez ensuite la protection de la branche `main` : pipeline « garde-fous » obligatoire et une approbation.
