@@ -119,7 +119,7 @@ on utilise des outils autorisés, on n'envoie ni secret ni donnée réelle, et u
 ## Publier ce dépôt (formateur)
 
 ```bash
-git remote add origin <adresse-du-depot>
+git remote add origin https://github.com/formations2026/formation-developpeurs-ia.git
 git push -u origin --all        # main et les deux branches de corrigé
 ```
 

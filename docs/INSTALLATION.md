@@ -13,7 +13,7 @@ un outil, ce n'est pas bloquant : vous travaillerez en binôme.
 
 ## 2. Le dépôt
 ```bash
-git clone <adresse-du-depot> meetroom
+git clone https://github.com/formations2026/formation-developpeurs-ia.git meetroom
 cd meetroom
 python -m venv .venv
 source .venv/bin/activate          # Windows PowerShell : .venv\Scripts\Activate.ps1
