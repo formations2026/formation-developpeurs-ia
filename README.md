@@ -1,5 +1,8 @@
 # MeetRoom — dépôt de la formation « Développeurs : boostez vos performances grâce à l'IA »
 
+> **Branche formateur** : elle contient les corrigés des ateliers, le QCM corrigé, le déroulé et les démonstrations.
+> Mode d'emploi : [`FORMATEUR.md`](FORMATEUR.md). Les participants travaillent sur `main`.
+
 MeetRoom est une petite API de réservation de salles de réunion (Python, FastAPI, SQLite).
 C'est l'application **fil rouge** de la formation : on y pratique le développement assisté par IA,
 puis on la sécurise et on l'encadre.
@@ -62,6 +65,7 @@ curl -X POST http://127.0.0.1:8000/bookings -H "X-User-Id: 1" -H "Content-Type: 
 | `.github/pull_request_template.md` | Cases « usage de l'IA » et « relu et testé » | Partie 6 |
 | `.github/workflows/garde-fous.yml` | La charte traduite en contrôles automatiques | Partie 6 |
 | `ateliers/` | Les six ateliers : consignes, supports, critères de réussite | Jours 1 et 2 |
+| `ateliers/*/CORRIGE.md`, `docs/formateur/` | Corrigés, QCM corrigé, déroulé, démonstrations (branche formateur) | — |
 | `docs/INSTALLATION.md` | Installation pas à pas et pannes fréquentes | Avant le jour 1 |
 | `docs/AUTRES-LANGAGES.md` | Équivalents Java, JavaScript, C# | Tout au long |
 

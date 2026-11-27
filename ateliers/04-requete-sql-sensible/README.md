@@ -39,4 +39,4 @@ Cet atelier est fait pour vous : tenez le rôle **RSSI** ou **DPO**. Vous valide
 - [ ] Chaque rôle a validé sa ligne
 
 ## Le corrigé
-Il est présenté par le formateur au débrief, après l'atelier. Comparer **votre** travail au corrigé est l'exercice le plus formateur : essayez d'abord.
+Branche formateur : voir [`CORRIGE.md`](CORRIGE.md).

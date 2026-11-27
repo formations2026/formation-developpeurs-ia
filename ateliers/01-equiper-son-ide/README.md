@@ -31,4 +31,4 @@ Mettez-vous en binôme avec un développeur. Votre mission : lire `AGENTS.md` et
 Faites tourner un modèle local (Ollama + une extension d'IDE) et refaites l'étape 5. Que perdez-vous, que gagnez-vous ?
 
 ## Le corrigé
-Il est présenté par le formateur au débrief, après l'atelier. Comparer **votre** travail au corrigé est l'exercice le plus formateur : essayez d'abord.
+Branche formateur : voir [`CORRIGE.md`](CORRIGE.md).

@@ -1,4 +1,4 @@
-.PHONY: install run test check seed sandbox
+.PHONY: install run test check seed sandbox corriges
 
 install:   ## Installer les dépendances de développement
 	pip install -r requirements-dev.txt
@@ -17,3 +17,6 @@ seed:      ## Remplir la base locale avec des données synthétiques
 
 sandbox:   ## Lancer les tests dans un conteneur sans réseau (bac à sable)
 	docker run --rm --network none --user 1000:1000 -v "$$PWD":/app -w /app python:3.12-slim sh -c "echo 'Bac à sable : pas de réseau, dossier du projet uniquement' && ls"
+
+corriges:  ## Tester le code corrigé des ateliers (branche formateur)
+	python -m pytest ateliers -q

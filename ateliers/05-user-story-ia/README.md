@@ -31,4 +31,4 @@ Cet atelier ne demande pas de coder : vous menez l'analyse des risques et la ré
 - [ ] La note de décision dit quelles données partent, et lesquelles ne partent jamais
 
 ## Le corrigé
-Il est présenté par le formateur au débrief, après l'atelier. Comparer **votre** travail au corrigé est l'exercice le plus formateur : essayez d'abord.
+Branche formateur : voir [`CORRIGE.md`](CORRIGE.md).

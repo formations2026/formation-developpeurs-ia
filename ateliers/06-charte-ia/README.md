@@ -38,4 +38,4 @@ Cet atelier ne demande pas de coder : vous rédigez les engagements et animez la
 - [ ] Un référent et une date de révision sont nommés
 
 ## Le corrigé
-Il est présenté par le formateur au débrief, après l'atelier. Comparer **votre** travail au corrigé est l'exercice le plus formateur : essayez d'abord.
+Branche formateur : voir [`CORRIGE.md`](CORRIGE.md).

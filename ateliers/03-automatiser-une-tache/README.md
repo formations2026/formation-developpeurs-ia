@@ -38,4 +38,4 @@ Vous écrivez **le ticket** confié à l'agent (périmètre, critères d'accepta
 - [ ] Vous savez dire ce que l'agent ne peut pas faire, et grâce à quel fichier
 
 ## Le corrigé
-Il est présenté par le formateur au débrief, après l'atelier. Comparer **votre** travail au corrigé est l'exercice le plus formateur : essayez d'abord.
+Branche formateur : voir [`CORRIGE.md`](CORRIGE.md).

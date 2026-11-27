@@ -47,4 +47,4 @@ Vous êtes **copilote**. Vous ne tapez pas de code : vous tenez le journal de bo
 - [ ] Vous pouvez expliquer chaque ligne du diff
 
 ## Le corrigé
-Il est présenté par le formateur au débrief, après l'atelier. Comparer **votre** travail au corrigé est l'exercice le plus formateur : essayez d'abord.
+Branche formateur : voir [`CORRIGE.md`](CORRIGE.md).
